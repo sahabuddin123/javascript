@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 class="sample-class">Some Randome</h1>
+    <ol>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">PHP</a></li>
+    </ol>
+    <hr>
+    <ul>
+        <li><a href="https://google.com">Google</a></li>
+        <li><a href="https://facebook.com">Facebook</a></li>
+        <li><a href="https://satech60.com">SAtech360</a></li>
+    </ul>
+    <hr>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum enim perspiciatis quod, debitis accusamus impedit maxime commodi aut corrupti ipsum doloremque placeat nisi consequatur amet magnam laudantium veritatis. Sapiente accusantium nisi optio rerum modi earum molestias iusto adipisci itaque a praesentium dignissimos dolorum, quam sunt. Illo non error, blanditiis eveniet repellendus magni quidem illum fugiat ad adipisci, est, quod amet beatae debitis nisi. A voluptatibus aliquid odio. Nesciunt autem quasi quae ratione dolor veritatis aliquam cum magnam? Magni, est molestias. Consectetur quidem eos error minima dolores. Eius placeat maiores ullam qui tenetur. Eos, nihil dolorum. Temporibus hic sapiente illum nulla?</p>
+
+<script>
+    //create link element
+    ancor = document.createElement('a');
+    //adding href
+    ancor.href = "https://pythone.com/";
+    //adding class
+    ancor.className = "text-danger";
+    //Create text node
+    text = document.createTextNode('Python');
+    // append child
+    ancor.appendChild(text);
+    // Create List  Element
+    liItem = document.createElement('li');
+    //adding multiple class
+    liItem.className = "sample-class tezt-class text-danger";
+    //adding id
+    liItem.id = "demo-id";
+    //adding attribute
+    liItem.setAttribute('title','Welcome to Dhaka');
+    //append Child
+    liItem.appendChild(ancor);
+    //select parent tag and append child
+    document.querySelector('ol').appendChild(liItem);
+    //check cconsole
+    //console.log(liItem);
+    // Replace Element-----------------
+    // select replace element
+    let oldheading = document.querySelector('h1');
+    //initial replacable element
+    let newheading = document.createElement('h2');
+    //adding class new element
+    newheading.className = 'new-sample-class';
+    //set element new element
+    newheading.appendChild(document.createTextNode('Hello world'));
+    //select parent element
+    let parent = oldheading.parentElement;
+    //replace element
+    parent.replaceChild(newheading,oldheading);
+    //checking element
+    // console.log(parent);
+    //remove element ----------
+    let list = document.querySelector('ul').children;
+    //remove element technic one
+    list[2].remove();
+    //remove element technic two
+    listIem = document.querySelectorAll('li');
+    list = document.querySelector('ul');
+    list.removeChild(listIem[4]);
+    //chacking element
+    console.log(list);
+</script>
+</body>
+</html>
