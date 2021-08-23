@@ -34,6 +34,9 @@
   let password = document.getElementById('password');
   password.addEventListener('keyup', passwordValid);
 
+  let submit = document.getElementById('submit');
+  submit.addEventListener('click', checkvalid);
+
   //username
   function username(e){
         let val = e;
@@ -70,6 +73,15 @@
             document.getElementById('live2').style.display = "none";
             this.style.border = "1px solid #c7c7c7";
         }
+  }
+  // Submit
+  function checkvalid(e){
+    let name = document.getElementById('name').value;
+    let password = document.getElementById('password').value;
+    
+      if(name.length > 8 && password.length > 6){
+          alert('Congress!');
+      } 
   }
 </script>
 </body>
