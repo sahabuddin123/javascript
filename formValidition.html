@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+      <form action="#">
+          <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" name="name" id="name">
+            <p id="live"></p>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <p id="live2"></p>
+          </div>
+          <div class="form-group">
+            <button type="button" id="submit">Submit</button>
+          </div>
+      </form>
+      <br>
+  </div>
+<script>
+  //name
+  let name = document.getElementById('name');
+  name.addEventListener('keyup', username);
+  //password
+  let password = document.getElementById('password');
+  password.addEventListener('keyup', passwordValid);
+
+  //username
+  function username(e){
+        let val = e;
+        let text = this.value;
+        if(text.length < 8){
+            document.getElementById('live').style.display = "block";
+            this.style.border = "1px solid red";
+            document.getElementById('live').innerText = `username minimum 8 character you type ${text.length} charecter`;
+        }
+        if(text.length > 8){
+            document.getElementById('live').style.display = "none";
+            this.style.border = "1px solid green";
+        }
+        if(text.length == 0){
+            document.getElementById('live').style.display = "none";
+            this.style.border = "1px solid #c7c7c7";
+        }
+  }
+
+    //password
+    function passwordValid(e){
+        let val = e;
+        let text = this.value;
+        if(text.length < 6){
+            document.getElementById('live').style.display = "block";
+            this.style.border = "1px solid red";
+            document.getElementById('live2').innerText = `password minimum 6 character you type ${text.length} charecter`;
+        }
+        if(text.length > 6){
+            document.getElementById('live2').style.display = "none";
+            this.style.border = "1px solid green";
+        }
+        if(text.length == 0){
+            document.getElementById('live2').style.display = "none";
+            this.style.border = "1px solid #c7c7c7";
+        }
+  }
+</script>
+</body>
+</html>
